@@ -6,13 +6,9 @@ class ListTileNativeAdFactory : FLTNativeAdFactory {
 
     func createNativeAd(_ nativeAd: GADNativeAd,
                         customOptions: [AnyHashable : Any]? = nil) -> GADNativeAdView? {
-        guard
-          let nibObjects = Bundle.main.loadNibNamed("ListTileNativeAdView", owner: nil, options: nil),
-          let nativeAdView = nibObjects.first as? GADNativeAdView
-        else {
-          assert(false, "Could not load nib file for adView")
-        }
         
+          let nibObjects = Bundle.main.loadNibNamed("ListTileNativeAdView", owner: nil, options: nil)
+          let nativeAdView = nibObjects!.first as! GADNativeAdView
         (nativeAdView.headlineView as? UILabel)?.text = nativeAd.headline
         nativeAdView.mediaView?.layer.cornerRadius = 12
         nativeAdView.mediaView?.clipsToBounds = true
