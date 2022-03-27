@@ -14,10 +14,10 @@ class HomePage extends StatelessWidget {
             height: 20,
           ),
           // Adjust itemCount based on the ad load state
-          itemCount: 10,
+          itemCount: 20,
           itemBuilder: (context, index) {
             // Render a banner ad
-            if (index == 2) {
+            if (index == 3 || index == 8 || index == 14) {
               return NativeAdView();
             } else {
               // Get adjusted item index from _getDestinationItemIndex()
