@@ -47,7 +47,7 @@ class _NativeAdViewState extends State<NativeAdView> {
       decoration: const BoxDecoration(
         color: Colors.pink,
       ),
-      height: 100,
+      height: 300,
       alignment: Alignment.center,
       child: _isAdLoaded ? AdWidget(ad: _ad) : const SizedBox.shrink(),
     );
