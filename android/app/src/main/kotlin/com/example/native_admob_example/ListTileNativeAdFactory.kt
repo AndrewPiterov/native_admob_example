@@ -1,19 +1,17 @@
-// TODO: Implement ListTileNativeAdFactory class
-
 package com.example.native_admob_example
+
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
-import io.flutter.plugins.googlemobileads.GoogleMobileAdsPlugin
 
-class ListTileNativeAdFactory(val context: Context) : GoogleMobileAdsPlugin.NativeAdFactory {
 
-    override fun createNativeAd(
+internal class ListTileNativeAdFactory(val context: Context) : GoogleMobileAdsPlugin.NativeAdFactory {
+
+    fun createNativeAd(
             nativeAd: NativeAd,
             customOptions: MutableMap<String, Any>?
     ): NativeAdView {
