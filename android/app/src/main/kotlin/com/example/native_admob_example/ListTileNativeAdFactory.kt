@@ -21,22 +21,13 @@ class ListTileNativeAdFactory(val context: Context) : GoogleMobileAdsPlugin.Nati
                 .inflate(R.layout.list_tile_native_ad, null) as NativeAdView
 
         with(nativeAdView) {
-            val attributionViewSmall =
-                    findViewById<TextView>(R.id.tv_list_tile_native_ad_attribution_small)
-            val attributionViewLarge =
-                    findViewById<TextView>(R.id.tv_list_tile_native_ad_attribution_large)
 
-            val iconView = findViewById<ImageView>(R.id.iv_list_tile_native_ad_icon)
-            val icon = nativeAd.icon
-            if (icon != null) {
-                attributionViewSmall.visibility = View.VISIBLE
-                attributionViewLarge.visibility = View.INVISIBLE
-                iconView.setImageDrawable(icon.drawable)
-            } else {
-                attributionViewSmall.visibility = View.INVISIBLE
-                attributionViewLarge.visibility = View.VISIBLE
+            val photo = findViewById<ImageView>(R.id.ad_photo)
+            val image = nativeAd.icon
+            if (image != null) {
+                photo.setImageDrawable(image.drawable)
             }
-            this.iconView = iconView
+            this.iconView = photo
 
             val headlineView = findViewById<TextView>(R.id.tv_list_tile_native_ad_headline)
             headlineView.text = nativeAd.headline
